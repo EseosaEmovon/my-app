@@ -1,8 +1,19 @@
-```js
+const dotenv = require("dotenv");
+dotenv.config();
+
 module.exports = {
-  SPOTIFY_CLIENT_ID: process.env.SPOTIFY_CLIENT_ID,
-  SPOTIFY_CLIENT_SECRET: process.env.SPOTIFY_CLIENT_SECRET,
-  SPOTIFY_REDIRECT_URI: process.env.SPOTIFY_REDIRECT_URI,
-  MONGO_URI: process.env.MONGO_URI,
+  mongodb: {
+    uri: process.env.MONGODB_URI,
+  },
+  spotify: {
+    clientId: process.env.SPOTIFY_CLIENT_ID,
+    clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
+    redirectUri: process.env.SPOTIFY_REDIRECT_URI,
+  },
+  session: {
+    secret: process.env.SESSION_SECRET || "your-session-secret",
+  },
+  server: {
+    port: process.env.PORT || 4000,
+  },
 };
-```;
